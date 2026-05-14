@@ -1,0 +1,9 @@
+{
+  "name": "devopsdowntime",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static website for the DevOps Downtime community meetup.",
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && rsync -a --exclude='.git' --exclude='.github' --exclude='dist' --exclude='node_modules' --exclude='*.zip' --exclude='.gitignore' --exclude='package.json' --exclude='package-lock.json' --exclude='wrangler.toml' --exclude='.DS_Store' ./ dist/"
+  }
+}

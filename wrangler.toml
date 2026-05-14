@@ -1,0 +1,8 @@
+name = "devopsdowntime"
+compatibility_date = "2025-05-01"
+
+# Serve the static site directly from the Worker using the Assets binding.
+# Docs: https://developers.cloudflare.com/workers/static-assets/
+[assets]
+directory = "./"
+not_found_handling = "single-page-application"

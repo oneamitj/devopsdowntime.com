@@ -579,9 +579,9 @@ section {
 .host__bg {
   position: absolute;
   inset: 0;
-  background-image: url('../../Resources/DevOps Downtime Brand Assets/Background/Background texture.png');
+  background-image: url('../../Resources/DevOps Downtime Brand Assets/Background/Background dark.png');
   background-size: cover;
-  opacity: 0.15;
+  opacity: 0.35;
 }
 
 .host__overlay {
