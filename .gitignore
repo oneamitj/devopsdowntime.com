@@ -45,3 +45,9 @@ build/
 # Misc
 *.bak
 *.tmp
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
