@@ -1438,8 +1438,17 @@ section {
   .hero__desc { margin: 0 auto; }
   .hero__actions { justify-content: center; }
 
+  .photo-deck {
+    height: 320px;
+    max-width: 420px;
+  }
+
   .about__grid { grid-template-columns: 1fr; gap: 48px; }
-  .about__visual-card { order: -1; aspect-ratio: 16/9; }
+  .about__visual-card { 
+    order: -1; 
+    aspect-ratio: auto; 
+    padding: 32px 24px; 
+  }
 
   .values__grid { grid-template-columns: repeat(2, 1fr); }
   .past__grid { grid-template-columns: 1fr 1fr; }
