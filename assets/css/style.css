@@ -491,7 +491,7 @@ section {
   position: relative;
   width: 100%;
   max-width: 500px;
-  height: 380px;
+  height: 460px;
   margin: 0 auto;
   perspective: 1000px;
 }
@@ -560,17 +560,25 @@ section {
 
 /* Position and tilt the cards */
 .photo-card--1 {
-  top: 5%;
+  top: 2%;
   left: 0;
   transform: rotate(-5deg) translate3d(0, 0, 0);
   z-index: 1;
 }
 
 .photo-card--2 {
-  bottom: 5%;
+  top: 22%;
   right: 0;
   transform: rotate(4deg) translate3d(0, 0, 10px);
   z-index: 2;
+}
+
+/* Upcoming edition sits on top of the stack */
+.photo-card--3 {
+  bottom: 0;
+  left: 4%;
+  transform: rotate(-1.5deg) translate3d(0, 0, 20px);
+  z-index: 3;
 }
 
 /* Hover effects */
@@ -903,6 +911,114 @@ section {
   color: var(--text-light);
   line-height: 1.6;
   font-weight: 300;
+}
+
+/* ---- Upcoming Events ---- */
+.upcoming {
+  background: var(--light);
+}
+
+.upcoming__card {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid #E2E8F0;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.upcoming__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15,23,42,0.08);
+}
+
+.upcoming__banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 280px;
+  padding: 56px 32px;
+  text-align: center;
+  background-image:
+    linear-gradient(135deg, rgba(73,216,205,0.3) 0%, rgba(15,23,42,0.95) 100%),
+    url('../../Resources/DevOps Downtime Brand Assets/Background/Background dark.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.upcoming__kicker {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+}
+
+.upcoming__tagline {
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.upcoming__info {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.upcoming__facts {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #E2E8F0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.upcoming__facts span {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-light);
+}
+
+.upcoming__facts a {
+  color: var(--blue);
+}
+
+.upcoming__note {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+.upcoming__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.upcoming__actions .btn--outline {
+  color: var(--text-dark);
+  border-color: #CBD5E1;
+}
+
+.upcoming__actions .btn--outline:hover {
+  border-color: var(--text-dark);
+  background: var(--light);
+  box-shadow: none;
 }
 
 /* ---- Past Events ---- */
@@ -1439,7 +1555,7 @@ section {
   .hero__actions { justify-content: center; }
 
   .photo-deck {
-    height: 320px;
+    height: 400px;
     max-width: 420px;
   }
 
@@ -1460,6 +1576,9 @@ section {
 }
 
 @media (max-width: 768px) {
+  .upcoming__card { grid-template-columns: 1fr; }
+  .upcoming__banner { min-height: 220px; padding: 64px 24px 48px; }
+  .upcoming__info { padding: 24px; }
   .past__grid { grid-template-columns: 1fr; }
   .topics__grid { grid-template-columns: 1fr; }
   .about__stats { grid-template-columns: 1fr; gap: 12px; }
@@ -1473,6 +1592,10 @@ section {
   .callout__actions { flex-direction: column; width: 100%; }
   .callout__actions .btn { width: 100%; justify-content: center; }
   .outreach__box { padding: 40px 24px; }
+  .photo-card__caption { bottom: 18px; left: 18px; right: 18px; padding: 8px 12px; gap: 8px; white-space: nowrap; }
+  .photo-card__venue { font-size: 11px; }
+  .upcoming__facts { grid-template-columns: 1fr; }
+  .upcoming__actions .btn { width: 100%; justify-content: center; }
   .values__grid { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; text-align: center; }
 }
